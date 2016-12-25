@@ -20,7 +20,7 @@ import Helpers exposing (..)
 all : Test
 all =
     Test.concat
-        [ readmeExample, regressions, expectationTests, fuzzerTests ]
+        [ readmeExample, regressions, todoTests, expectationTests, fuzzerTests ]
 
 
 readmeExample : Test
@@ -84,6 +84,13 @@ expectationTests =
                         Ok 12 |> Expect.err
             ]
           -- , describe "Expect.somethingElse" [ ... ]
+        ]
+
+
+todoTests : Test
+todoTests =
+    describe "Test.todo"
+        [ expectToFail <| todo "a TODO test fails"
         ]
 
 

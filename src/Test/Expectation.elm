@@ -25,6 +25,7 @@ type Reason
         , extra : List String
         , missing : List String
         }
+    | TODO
 
 
 {-| Set the given (fuzz test input) of an expectation.
