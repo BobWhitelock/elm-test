@@ -104,16 +104,20 @@ test desc thunk =
 always fail, but test runners will only include them in their output if there
 are no other failures.
 
-The intended use is when you're brainstorming lots of tests you'd like to write,
-but you can't implement them all at once. When you replace `todo` with a real
-test, you'll be able to see if it fails without clutter from tests still not
-implemented. But, unlike leaving yourself comments, you'll be prompted to
-implement these tests because your suite will fail.
+These tests aren't meant to be committed to version control. Instead, use them
+when you're brainstorming lots of tests you'd like to write, but you can't
+implement them all at once. When you replace `todo` with a real test, you'll be
+able to see if it fails without clutter from tests still not implemented. But,
+unlike leaving yourself comments, you'll be prompted to implement these tests
+because your suite will fail.
 
     describe "a new thing"
         [ todo "does what is expected in the common case"
         , todo "correctly handles an edge case I just thought of"
         ]
+
+This functionality is similar to "pending" tests in other frameworks, except
+that a TODO test is considered failing but a pending test often is not.
 -}
 todo : String -> Test
 todo desc =
